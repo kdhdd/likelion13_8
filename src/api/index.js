@@ -1,4 +1,4 @@
-const BASE = "/api";              // 프록시 prefix
+const BASE = "https://shopping-website-server.onrender.com";              // 프록시 prefix
 
 export const getProducts = async (type, params = {}) => {
    const qs = new URLSearchParams(params).toString();

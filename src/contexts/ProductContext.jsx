@@ -9,14 +9,14 @@ export function ProductProvider({ children }) {
   /* 최초 1회 목록 로드 */
   const fetchProducts = async () => {
     if (loaded) return;
-    const res = await fetch("/api/shoes");         // 필요 시 type 인자
+    const res = await fetch("https://shopping-website-server.onrender.com/shoes");         // 필요 시 type 인자
     setProducts(await res.json());
     setLoaded(true);
   };
 
   /* -------------------- 새 상품 등록 -------------------- */
   const addProduct = async (item, type = "shoes") => {     
-    const res = await fetch(`/api/${type}`, {               
+    const res = await fetch(`https://shopping-website-server.onrender.com/${type}`, {               
       method: "POST",                                       
       headers: { "Content-Type": "application/json" },     
       body: JSON.stringify(item),                           
